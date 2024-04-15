@@ -1,0 +1,37 @@
+image: node:18.16-alpine
+
+before_script:
+  - apk add rsync openssh-client
+  - node -v
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - rm -rf .git
+  - rm -rf .vscode
+  - rm -rf .bin
+
+cache:
+  key:
+    files:
+      - package.json
+  paths:
+    - dist
+    - node_modules
+
+stages:
+  - deploy
+
+Deploy Develop:
+  stage: deploy
+  script:
+    - npm install --silent
+    - npm run build
+    - ssh-keyscan 3.109.18.205  >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - echo "$ENV_DEV" > enviroment
+    - rsync -r -a -z -e ssh --delete --exclude '.env' . gitlab@3.109.18.205:/home/gitlab/backend
+    - rsync -r -a -z -e ssh enviroment gitlab@3.109.18.205:/home/gitlab/backend/.env
+    - ssh gitlab@3.109.18.205 'cd /home/gitlab/backend && pm2 reload ecosystem.config.js --only backend'
+  only:
+    - master
