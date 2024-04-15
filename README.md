@@ -1,69 +1,51 @@
-# backend
+# Ayni Finance
 
-This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
-[initial project layout](https://loopback.io/doc/en/lb4/Loopback-application-layout.html).
+[Project in Taikai Buildathon 2023](https://taikai.network/ethargentina/hackathons/buildathon-2023/projects/cll644adx00f9ub01xs3xjrnb/idea)
 
-## Install dependencies
+## Description
 
-By default, dependencies were installed when this application was generated.
-Whenever dependencies in `package.json` are changed, run the following command:
+### Problem
 
-```sh
-yarn install
-```
+Latin America is one of the regions with the lowest levels of banking. Around 60% of the Latin American population is unbanked, with this number significantly higher in rural areas, reaching up to 20%. Moreover, 75% of rural areas in Latin America are dedicated to agriculture. Despite having assets that could serve as collateral, individuals involved in agriculture, such as small farmers, are often excluded from traditional financial systems.
 
-## Run the application
+### Why Ayni Finance?
 
-```sh
-yarn start
-```
+Ayni Finance draws inspiration from Inca culture, which utilized a communal development model called "Ayni" instead of traditional banks. This model emphasized personal development contributing to communal progress.
 
-You can also run `node .` to skip the build step.
+### Solution
 
-Open http://127.0.0.1:3000 in your browser.
+Ayni Finance is a platform that facilitates financial inclusion for rural, unbanked populations through asset tokenization, leveraging rural communities' customs and practices.
 
-## Rebuild the project
+### Business Model
 
-To incrementally build the project:
+Ayni Finance earns a 20% share of the interest paid to investors. This percentage is added to the base interest rate suggested by Ayni Finance to rural community members wishing to tokenize their assets.
 
-```sh
-yarn run build
-```
+### Unique Features
 
-To force a full build by cleaning up cached artifacts:
+Ayni Finance allows the tokenization of various assets with verifiable value, including movable assets (livestock, machinery, production) and immovable assets (partial or total land ownership). It also promotes decentralized credit scoring based on the applicant's reputation within the community, determined by decentralized community voting. For example, if applicant "A" seeks a loan collateralized by their livestock, their initial credit risk rating and approval depend on the trust votes they receive from their community.
 
-```sh
-yarn run rebuild
-```
+## Deliverables
 
-## Fix code style and formatting issues
+- Pitch Deck
+- Platform Link: [Ayni Finance](https://ayni.finance)
+- Repository Links:
+  - Frontend: [GitLab Frontend Repository](https://gitlab.com/ayni-financiero/frontend)
+  - Backend: [GitLab Backend Repository](https://gitlab.com/ayni-financiero/backend)
+  - Smart Contracts: [GitLab Smart Contracts Repository](https://gitlab.com/ayni-financiero/smart-contracts)
+- Smart Contract Details:
+  - Network: Polygon
+  - Address: 0x8D61Ec05733A983Bd17E7E3523f04d56fAf5aE93
+- Pitch Video: [YouTube Pitch Video](https://youtu.be/-dN8qa9orrQ)
 
-```sh
-yarn run lint
-```
+### Note
 
-To automatically fix such issues:
+Prototypes were created in Figma, but the MVP was based on a template due to time constraints.
 
-```sh
-yarn run lint:fix
-```
+## Bounties
 
-## Other useful commands
+- **Worldcoin**: Integrated for platform login. Identity validation of community members is crucial for preventing improper financing.
+- **Lens Protocol**: Integrated for automatic creation of community member profiles. Aims to maintain and update decentralized credit profiles.
+- **GHO**: Utilized Aave's StableCoin for fund deposits to community members, returning tokens representing promised interest rates. Future plans include diversifying tokenized assets as part of collateral for the stablecoin.
+- **mpETH**: Used as a StableCoin for fund deposits to community members.
 
-- `yarn run migrate`: Migrate database schemas for models
-- `yarn run openapi-spec`: Generate OpenAPI spec into a file
-- `yarn run docker:build`: Build a Docker image for this application
-- `yarn run docker:run`: Run this application inside a Docker container
 
-## Tests
-
-```sh
-yarn test
-```
-
-## What's next
-
-Please check out [LoopBack 4 documentation](https://loopback.io/doc/en/lb4/) to
-understand how you can continue to add features to this application.
-
-[![LoopBack](https://github.com/loopbackio/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png)](http://loopback.io/)
